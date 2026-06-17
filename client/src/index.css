@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-primary: "Quicksand", sans-serif;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+.active {
+  color: #d29c49;
+}
+
+@layer components {
+  /* Chiều rộng/cao của thanh cuộn */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+  }
+
+  /* Phần rãnh (nền) thanh cuộn */
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-300;
+  }
+
+  /* Phần con trỏ (thanh cầm) có thể kéo */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#884413];
+  }
+
+  /* Hiệu ứng di chuột vào thanh cuộn */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#884413];
+  }
+}
