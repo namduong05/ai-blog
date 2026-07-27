@@ -11,7 +11,7 @@ const AddPost = () => {
       >
         Trở lại
       </button>
-      <div className="w-1/2 mx-auto">
+      <div className="m-10">
         <h1 className="text-3xl font-bold mb-4 text-center">
           Viết bài đăng mới
         </h1>

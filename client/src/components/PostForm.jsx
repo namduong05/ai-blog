@@ -1,8 +1,9 @@
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { postSchema } from "../schema";
 import categoryStore from "../store/categoryStore";
 import postStore from "../store/postStore";
+import TipTapEditor from "./TipTapEditor";
 import { toast } from "sonner";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
@@ -24,6 +25,7 @@ const PostForm = ({ formData }) => {
 
   const {
     register,
+    control,
     handleSubmit,
     reset,
     watch,
@@ -130,10 +132,18 @@ const PostForm = ({ formData }) => {
       </div>
 
       <div className="mt-4">
-        <textarea
+        {/* <textarea
           {...register("desc")}
           placeholder="Viết điều gì đó..."
           className="border border-gray-300 rounded px-3 py-2 w-full bg-white outline-[#884413]"
+        /> */}
+
+        <Controller
+          name="desc"
+          control={control}
+          render={({ field }) => (
+            <TipTapEditor value={field.value} onChange={field.onChange} />
+          )}
         />
         {errors.desc && (
           <p className="text-red-500 text-sm mt-1">{errors.desc.message}</p>

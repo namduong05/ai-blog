@@ -139,10 +139,9 @@ const HomePage = () => {
                   alt={post.title}
                   className="w-full h-50 object-cover rounded-xl"
                 />
-                <h2 className="text-lg font-bold line-clamp-2">
+                <h2 className="text-lg font-bold line-clamp-2 mt-2">
                   {post?.title}
                 </h2>
-                <p className="line-clamp-2 my-1 italic">{post?.desc}</p>
               </div>
               <div className="flex justify-between items-center pt-3">
                 <div className="flex justify-between items-center gap-2">
@@ -151,7 +150,7 @@ const HomePage = () => {
                     src={post.updatedBy?.file?.url || "/avt.webp"}
                     alt={post.updatedBy.name}
                   />
-                  <span className="font-bold">{post.updatedBy.name}</span>
+                  <span className="italic">{post.updatedBy.name}</span>
                 </div>
                 <div className="flex gap-1">
                   <Heart />

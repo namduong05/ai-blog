@@ -144,10 +144,11 @@ const PostList = () => {
               <img
                 src={post?.file?.url || "/OIP.webp"}
                 alt={post?.title}
-                className="w-full h-50 object-cover"
+                className="w-full h-50 object-cover rounded-xl"
               />
-              <h2 className="text-lg font-bold line-clamp-2">{post?.title}</h2>
-              <p className="line-clamp-2">{post?.desc}</p>
+              <h2 className="text-lg font-bold line-clamp-2 mt-2">
+                {post?.title}
+              </h2>
             </Link>
           ))
         )}

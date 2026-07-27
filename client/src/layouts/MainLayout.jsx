@@ -5,7 +5,7 @@ const MainLayout = () => {
   return (
     <>
       <Header />
-      <main className="mt-14 bg-[#f7f4ed] h-screen font-primary">
+      <main className="mt-14 bg-[#f7f4ed] min-h-screen font-primary">
         <Outlet />
       </main>
     </>

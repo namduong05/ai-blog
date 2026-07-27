@@ -93,7 +93,7 @@ const refresh = async (req, res, next) => {
   const refreshToken = req.cookies.refreshToken;
 
   if (!refreshToken)
-    return res.status(401).json({ message: "Không tìm thấy Refresh Token" });
+    return res.status(403).json({ message: "Không tìm thấy Refresh Token" });
 
   // Xác thực refreshToken xem có hợp lệ/hết hạn chưa
   try {

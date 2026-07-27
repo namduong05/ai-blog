@@ -6,6 +6,7 @@ import { formatDateVN } from "../../utils/formatDateVN";
 import { toast } from "sonner";
 import { Heart } from "lucide-react";
 import Skeleton from "../../components/Skeleton";
+import DOMPurify from "isomorphic-dompurify";
 
 const DetailPost = () => {
   const { id } = useParams();
@@ -23,6 +24,7 @@ const DetailPost = () => {
     const fetchData = async () => {
       try {
         const response = await getPostById(id);
+        console.log(response);
         setPost(response.post);
       } catch (err) {
         toast.error(error || "Get post failed!");
@@ -88,11 +90,16 @@ const DetailPost = () => {
         </p>
         {user._id !== post.updatedBy?._id && (
           <p>
-            <strong>Tác giả:</strong> {post.updatedBy.name}
+            <strong>Tác giả:</strong> {post.updatedBy?.name}
           </p>
         )}
 
-        <p className="my-4">{post.desc}</p>
+        <div
+          className="prose max-w-none text-gray-800"
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(post?.desc),
+          }}
+        />
         {post.file?.url && (
           <img className="w-full" src={post.file?.url} alt={post.title} />
         )}
