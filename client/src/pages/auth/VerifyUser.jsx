@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { verifyUserSchema } from "../schema";
+import { verifyUserSchema } from "../../schema";
 import { useNavigate } from "react-router";
-import authStore from "../store/authStore";
+import authStore from "../../store/authStore";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 

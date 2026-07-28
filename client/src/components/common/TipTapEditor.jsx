@@ -3,7 +3,7 @@ import StarterKit from "@tiptap/starter-kit";
 import { TextStyleKit } from "@tiptap/extension-text-style";
 import FontFamily from "@tiptap/extension-font-family";
 import { useEffect } from "react";
-import { MenuBar } from "./MenuBar";
+import { MenuBar } from "../MenuBar";
 
 const TipTapEditor = ({ value, onChange, placeholder }) => {
   const editor = useEditor({

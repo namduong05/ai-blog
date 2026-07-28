@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import PostForm from "../../components/PostForm";
+import PostForm from "../../components/forms/PostForm";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { toast } from "sonner";

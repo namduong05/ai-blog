@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import PostForm from "../../components/PostForm";
+import PostForm from "../../components/forms/PostForm";
 
 const AddPost = () => {
   const navigate = useNavigate();

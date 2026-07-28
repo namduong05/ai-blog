@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { changePasswordSchema } from "../schema";
+import { changePasswordSchema } from "../../schema";
 import { useNavigate } from "react-router";
-import authStore from "../store/authStore";
+import authStore from "../../store/authStore";
 import { toast } from "sonner";
 
-const Setting = () => {
+const ChangePassword = () => {
   const navigate = useNavigate();
 
   const changePassword = authStore((state) => state.changePassword);
@@ -96,4 +96,4 @@ const Setting = () => {
   );
 };
 
-export default Setting;
+export default ChangePassword;

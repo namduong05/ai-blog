@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { useDebounce } from "../../hooks/useDebounce";
 import { NotebookPen, Search } from "lucide-react";
-import Skeleton from "../../components/Skeleton";
+import Skeleton from "../../components/common/Skeleton";
 
 const PostList = () => {
   const posts = postStore((state) => state.posts);
@@ -113,27 +113,12 @@ const PostList = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {loading ? (
           <>
-            <div>
-              <Skeleton className="h-52 w-full" />
-              <Skeleton className="h-6 w-3/4 mt-3" />
-              <Skeleton className="h-4 w-full mt-2" />
-              <Skeleton className="h-4 w-1/2 mt-2" />
-            </div>
-            <div>
-              <Skeleton className="h-52 w-full" />
-              <Skeleton className="h-6 w-3/4 mt-3" />
-              <Skeleton className="h-4 w-full mt-2" />
-              <Skeleton className="h-4 w-1/2 mt-2" />
-            </div>
-            <div>
-              <Skeleton className="h-52 w-full" />
-              <Skeleton className="h-6 w-3/4 mt-3" />
-              <Skeleton className="h-4 w-full mt-2" />
-              <Skeleton className="h-4 w-1/2 mt-2" />
-            </div>
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
           </>
         ) : posts.length === 0 ? (
-          "You have no posts yet.!"
+          "Không có dữ liệu hiển thị!"
         ) : (
           posts.map((post) => (
             <Link

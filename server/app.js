@@ -8,7 +8,7 @@ import connectDB from "./config/db.js";
 import { initCloudinary } from "./config/cloudinary.js";
 import * as routes from "./routes/index.js";
 import errorHandler from "./middlewares/errorHandler.js";
-import notFound from "./routes/notfound.js";
+import notFound from "./routes/notFound.js";
 
 //connect to MongoDB, Cloudinary
 connectDB();

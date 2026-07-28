@@ -1,5 +1,5 @@
 import { useEditorState } from "@tiptap/react";
-import { menuBarSelector } from "./menuBarState.js";
+import { menuBarSelector } from "../store/menuBarStore.js";
 
 export const MenuBar = ({ editor }) => {
   const editorState = useEditorState({ editor, selector: menuBarSelector });

@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { profileSchema } from "../schema";
+import { profileSchema } from "../../schema";
 import { useNavigate } from "react-router";
-import authStore from "../store/authStore";
+import authStore from "../../store/authStore";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
@@ -66,7 +66,7 @@ const Profile = () => {
         </button>
       )}
       <button
-        onClick={() => navigate("/settings")}
+        onClick={() => navigate("/change-password")}
         className="bg-gray-300  rounded-xl p-2 m-2 hover:bg-gray-400 cursor-pointer"
       >
         Đổi mật khẩu

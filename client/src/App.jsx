@@ -10,13 +10,13 @@ import NotFound from "./pages/NotFound";
 
 // --- CẤU HÌNH LAZY LOAD CHO CÁC PAGES TRANH CHỦ, PROFILE, PUBLIC ---
 const HomePage = lazy(() => import("./pages/HomePage"));
-const Profile = lazy(() => import("./pages/Profile"));
-const Setting = lazy(() => import("./pages/Setting"));
-const VerifyUser = lazy(() => import("./pages/VerifyUser"));
+const Profile = lazy(() => import("./pages/auth/Profile"));
+const ChangePassword = lazy(() => import("./pages/auth/ChangePassword"));
+const VerifyUser = lazy(() => import("./pages/auth/VerifyUser"));
 
-const SignIn = lazy(() => import("./pages/SignIn"));
-const SignUp = lazy(() => import("./pages/SignUp"));
-const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
+const SignIn = lazy(() => import("./pages/auth/SignIn"));
+const SignUp = lazy(() => import("./pages/auth/SignUp"));
+const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
 
 // --- LAZY LOAD CHO CATEGORIES ---
 const CategoryList = lazy(() => import("./pages/category/CategoryList"));
@@ -42,7 +42,7 @@ function App() {
             <Route element={<MainLayout />}>
               <Route index element={<HomePage />} />
               <Route path="profile" element={<Profile />} />
-              <Route path="settings" element={<Setting />} />
+              <Route path="change-password" element={<ChangePassword />} />
               <Route path="verify-user" element={<VerifyUser />} />
 
               {/* Categories */}

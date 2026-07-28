@@ -10,7 +10,7 @@ import {
   changePasswordSchema,
   updateProfileSchema,
 } from "../validators/auth.js";
-import isAuth from "../middlewares/isAuth.js";
+import { isAuth } from "../middlewares/auth.js";
 
 const router = express.Router();
 

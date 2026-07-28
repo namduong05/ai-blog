@@ -1,9 +1,9 @@
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { postSchema } from "../schema";
-import categoryStore from "../store/categoryStore";
-import postStore from "../store/postStore";
-import TipTapEditor from "./TipTapEditor";
+import { postSchema } from "../../schema";
+import categoryStore from "../../store/categoryStore";
+import postStore from "../../store/postStore";
+import TipTapEditor from "../common/TipTapEditor";
 import { toast } from "sonner";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";

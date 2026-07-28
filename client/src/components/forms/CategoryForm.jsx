@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { categorySchema } from "../schema";
-import categoryStore from "../store/categoryStore";
+import { categorySchema } from "../../schema";
+import categoryStore from "../../store/categoryStore";
 import { toast } from "sonner";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";

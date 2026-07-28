@@ -1,6 +1,6 @@
 import express from "express";
 import * as postControllers from "../controllers/post.js";
-import isAuth from "../middlewares/isAuth.js";
+import { isAuth } from "../middlewares/auth.js";
 import validate from "../middlewares/validation.js";
 import {
   addPostValidator,

@@ -1,6 +1,6 @@
 import express from "express";
 import * as fileControllers from "../controllers/file.js";
-import isAuth from "../middlewares/isAuth.js";
+import { isAuth } from "../middlewares/auth.js";
 import upload from "../middlewares/upload.js";
 
 const router = express.Router();

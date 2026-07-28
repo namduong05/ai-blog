@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { formatDateVN } from "../../utils/formatDateVN";
 import { toast } from "sonner";
 import { Heart } from "lucide-react";
-import Skeleton from "../../components/Skeleton";
+import Skeleton from "../../components/common/Skeleton";
 import DOMPurify from "isomorphic-dompurify";
 
 const DetailPost = () => {
@@ -38,22 +38,14 @@ const DetailPost = () => {
       try {
         const response = await deletePost(id);
         toast.success(response?.message || "Delete success!");
-        navigate("/posts");
+        navigate("/my-posts");
       } catch (err) {
         toast.error(error || "Delete failed!!!");
       }
     }
   };
 
-  if (loading || !post)
-    return (
-      <>
-        <Skeleton className="h-52 w-full" />
-        <Skeleton className="h-6 w-3/4 mt-3" />
-        <Skeleton className="h-4 w-full mt-2" />
-        <Skeleton className="h-4 w-1/2 mt-2" />
-      </>
-    );
+  if (loading || !post) return <Skeleton />;
 
   return (
     <div>
@@ -94,15 +86,19 @@ const DetailPost = () => {
           </p>
         )}
 
+        {post.file?.url && (
+          <img
+            className="w-full h-136 object-cover rounded-lg my-4"
+            src={post.file?.url}
+            alt={post.title}
+          />
+        )}
         <div
           className="prose max-w-none text-gray-800"
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(post?.desc),
           }}
         />
-        {post.file?.url && (
-          <img className="w-full" src={post.file?.url} alt={post.title} />
-        )}
 
         <button className="flex gap-1 bg-white p-2 rounded-xl border border-gray-300 cursor-pointer mx-auto">
           <Heart />

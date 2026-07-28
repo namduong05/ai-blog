@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { sendCodeSchema, resetWithCodeSchema } from "../schema";
+import { sendCodeSchema, resetWithCodeSchema } from "../../schema";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
 import { useState } from "react";
-import authStore from "../store/authStore";
+import authStore from "../../store/authStore";
 
 const ForgotPassword = () => {
   const [emailInput, setEmailInput] = useState("");

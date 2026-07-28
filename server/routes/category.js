@@ -1,7 +1,6 @@
 import express from "express";
 import * as categoryControllers from "../controllers/category.js";
-import isAuth from "../middlewares/isAuth.js";
-import isAdmin from "../middlewares/isAdmin.js";
+import { isAuth, isAdmin } from "../middlewares/auth.js";
 import validate from "../middlewares/validation.js";
 import {
   addCategorySchema,

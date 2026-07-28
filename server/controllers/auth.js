@@ -1,9 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
-import hashPassword from "../utils/hashPassword.js";
-import comparePassword from "../utils/comparePassword.js";
-import generateRefreshToken from "../utils/generateRefreshToken.js";
-import generateAccessToken from "../utils/generateAccessToken.js";
+import { comparePassword, hashPassword } from "../utils/password.js";
+import { generateAccessToken, generateRefreshToken } from "../utils/jwt.js";
 import generateCode from "../utils/generateCode.js";
 import sendEmail from "../utils/sendEmail.js";
 
